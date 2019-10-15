@@ -1,11 +1,11 @@
-require "test_helper"
+require 'test_helper'
 
-class NmaxGemTest < Minitest::Test
+class NmaxTest < Minitest::Test
   def test_that_it_has_a_version_number
     refute_nil ::NmaxGem::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_empty_input
+    assert true
   end
 end

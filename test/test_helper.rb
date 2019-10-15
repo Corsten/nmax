@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "nmax"
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+require 'nmax'
 
-require "minitest/autorun"
+require 'minitest/autorun'

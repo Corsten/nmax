@@ -1,5 +1,16 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "nmax"
+require 'bundler/setup'
+require 'nmax'
 
+print_memory_usage do
+  print_time_spent do
+    ARGF.each_line do |line|
+        begin
+          puts Nmax.nmax(line.to_s)
+        rescue StandardError => e
+          puts e.message
+        end
+    end
+  end
+end
