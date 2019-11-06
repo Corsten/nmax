@@ -3,14 +3,21 @@
 require 'bundler/setup'
 require 'nmax'
 
+n = ARGV.first.to_i
+
+ARGV.clear
+
+puts ARGF.readchar
+
+raise 'Please enter count of numbers. n parameter' if n.zero?
+
 print_memory_usage do
   print_time_spent do
-    ARGF.each_line do |line|
-        begin
-          puts Nmax.nmax(line.to_s)
-        rescue StandardError => e
-          puts e.message
-        end
+    begin
+      numbers = Nmax.get_array_of_numbers
+      puts numbers.last(n)
+    rescue StandardError => e
+      puts e.message
     end
   end
 end
